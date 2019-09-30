@@ -5,6 +5,8 @@ class Population {
   int bestNavigator = 0;
   int lowestSteps = 500;
 
+  // Create the population by creating an array of navigator
+  // objects, with the size specified.
   Population(int size) {
     navigators = new Navigator[size];
     for (int i = 0; i < size; i++) {
@@ -12,6 +14,8 @@ class Population {
     }
   }
 
+  // Iterate through the array of navigators to display each 
+  // of them.
   void display() {
     for (int i = 0; i < navigators.length; i++) {
       if (visuals.displayBestOnly == false) {
