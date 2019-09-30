@@ -26,13 +26,15 @@ class Navigator {
     // given generation, this navigator will have the
     // highest fitness from the previously evaluated
     // generation.
-    strokeWeight(1);
-    stroke(255);
+    strokeWeight(0);
     if (!isBest && visuals.displayBestOnly == false) {
       fill(140, 140, 140);
+      //pushMatrix();
+      //rectMode(CENTER);
+      //rect(pos.x, pos.y, cfg.diameter, cfg.diameter);
+      //popMatrix();
       ellipse(pos.x, pos.y, cfg.diameter, cfg.diameter);
     } else {
-      strokeWeight(0);
       fill(0, 0, 255);
       ellipse(pos.x, pos.y, cfg.diameter + 3, cfg.diameter + 3);
     }
@@ -58,7 +60,7 @@ class Navigator {
     vel.limit(5);
     pos.add(vel);
   }
-  
+
   // Method for checking whether any navigators have gone offscreen or reached the solution.
   void update() {
     if (active && !solved) {
@@ -84,7 +86,7 @@ class Navigator {
     // effectively. Therefore, the steps it took for a navigator
     // to reach the solution should be measured for comparison.
     if (solved) {
-      fitness = 1.0/16.0 + 10000.0/(float)(brain.step * brain.step);
+      fitness = 1.0 / 16.0 + 10000.0 /(float)(brain.step * brain.step);
     } else {
       float distance = dist(pos.x, pos.y, cfg.goal.x, cfg.goal.y);
       fitness = 1.0 /(distance * distance);
