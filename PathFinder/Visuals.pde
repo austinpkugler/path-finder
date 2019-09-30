@@ -1,5 +1,8 @@
 class Visuals {
 
+  // All visual assets are assigned a datatype.
+  // Visual assets include fonts, images, and user
+  // preferences.
   PFont sourceCodePro;
   PFont courier;
   PImage menuImg;
@@ -11,7 +14,6 @@ class Visuals {
   boolean displayData = true;
   boolean displayBestOnly = false;
   boolean paused = true;
-  
   float sumOfFrameRates;
   float avgFrameRate;
 
@@ -38,6 +40,7 @@ class Visuals {
     case "edit":
       background(0);
       displayNavigators();
+      image(launchedImg, 0, 0, width, height);
       image(editImg, 0, 0, width, height);
       displayDebug();
       break;
@@ -65,6 +68,7 @@ class Visuals {
     }
   }
 
+  // Method for the display of all navigators who are currently alive.
   void displayNavigators() {
     stroke(0);
     fill(0, 255, 0);
@@ -106,6 +110,8 @@ class Visuals {
       text("FPS: " + int(frameRate), 5, 70);
       text("Diameter: " + cfg.diameter, 5, 85);
       text("Runtime: " + int(runtime) + "m", 5, 100);
+      text("Mutation Rate: " + (cfg.mutationRate * 100) + '%', 5, 115);
+      text("Mode: " + status, 5, 130);
       text("'m' | view main menu\n'd' | toggle debug mode\n'b' | toggle best only", 5, height * 0.95);
     }
   }
