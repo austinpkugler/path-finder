@@ -6,6 +6,7 @@
  > Add ability to randomize walls.
  > Add ability to delete stagnant and 
  moving walls.
+ > FIX THE STupid thing where start / stp[p circle stop lettin u cvhange meand 
  - In launched mode:
  > Check for collision between any navigators
  and walls; kill the navigators if they
